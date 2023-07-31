@@ -221,13 +221,14 @@
           .style("position", 'absolute')
           .style("top", '400px')
           .style("left", '800px')
+          .style("font-size", '10px')
           .style("text-align", "center");
          var mouseover = function(d) {
                 //d3.select(this)
                 //    .style("fill","orange")
                 d3.select(this).style("cursor", "pointer")
                 tooltip
-                    .html("Age group: " + d.age + " <br/> Value: " + (d.value * 100).toPrecision(3) + "%")
+                    .html("Age group: " + d.age + " <br/> Population: " + (d.value * 100).toPrecision(3) + "%")
                     .style("opacity", 1)
             }
 
@@ -235,14 +236,14 @@
                 d3.select(this)
                     .style("fill","orange")
                 tooltip2
-                    .html("Year: " + d[4] + " <br/> Value: " + (d[3] * 100).toPrecision(3) + "%")
+                    .html("Year: " + d[4] + " <br/> Population: " + (d[3] * 100).toPrecision(3) + "%"+ "<br/>Age group: " + d[2])
                     .style("opacity", 1)
             }
 
             var mouseleave2 = function(d) {
                d3.select(this)
                     .style("fill","grey")
-                tooltip
+                tooltip2
                 .style("opacity", 0)
             }
 
@@ -251,14 +252,14 @@
                 d3.select(this)
                     .style("fill","orange")
                 tooltip2
-                    .html("Year: " + d[4] + " <br/> Value: " + (d[3] * 100).toPrecision(3) + "%")
+                    .html("Year: " + d[4] + " <br/> Population %: " + (d[3] * 100).toPrecision(3) + "%" + "<br/>Age group: " + d[2])
                     .style("opacity", 1)
             }
 
             var mouseleave3 = function(d) {
                d3.select(this)
                     .style("fill","#CC0000")
-                tooltip
+                tooltip2
                 .style("opacity", 0)
             }
 
